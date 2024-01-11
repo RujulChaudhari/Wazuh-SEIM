@@ -1,33 +1,30 @@
-This guide will walk you through the process of setting up Wazuh, a security information and event management (SIEM) tool, on a server and its corresponding agent on a client.
+# This guide will walk you through the process of setting up Wazuh, a security information and event management (SIEM) tool, on a server and its corresponding agent on a client.
 
-Server Setup
-Step 1: Prerequisites
-Make sure you have the following prerequisites installed on your server:
+## Server Setup
+## Step 1: Prerequisites
+Make sure you have the following prerequisites for your server:
 
- Ubuntu 20.04 (or your preferred Linux distribution)
- Internet connection
- sudo access
-Step 2: Install Wazuh Manager
+ - Ubuntu 20.04 (or your preferred Linux distribution)
+ - Internet connection
+ - sudo access
+## Step 2: Install Wazuh Manager
 Run the following commands to install the Wazuh Manager:
 
-bash
-Copy code
-sudo curl -s https://packages.wazuh.com/4.x/wazuh_repo -o /etc/apt/sources.list.d/wazuh.list
-sudo apt-get update
-sudo apt-get install wazuh-manager
-Step 3: Start Wazuh Manager
-Start the Wazuh Manager service:
+- ```curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a```
+- ```sudo apt-get update```
+- ```sudo apt-get install wazuh-manager```
 
-bash
-Copy code
-sudo systemctl start wazuh-manager
-Step 4: Install Wazuh API and Dashboard
+## Step 3: Start Wazuh Manager
+Start the Wazuh Manager service:
+- ```sudo systemctl start wazuh-manager```
+
+
+## Step 4: Install Wazuh API and Dashboard
 Run the following commands:
 
-bash
-Copy code
-sudo apt-get install wazuh-api
-sudo apt-get install wazuh-dashboard
+```sudo apt-get install wazuh-api```
+```sudo apt-get install wazuh-dashboard```
+
 Step 5: Access Wazuh Dashboard
 Open a web browser and navigate to http://your-server-ip:5601 to access the Wazuh dashboard.
 
