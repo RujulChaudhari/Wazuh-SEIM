@@ -18,30 +18,29 @@ Run the following commands to install the Wazuh Manager:
  ![](https://i.imgur.com/E6zV1Zd.png)
 <br>Save these credentials somewhere secure, you will be using these to login to the dashboard. <br>
  ![](https://i.imgur.com/QNBMCNT.png)
-- **NOTE:** If the service hasn't started automatically, go ahead and start it manually with the following command:
+- **NOTE:** If the service hasn't started automatically, go ahead and start it manually with the following command: <br>
 <br>```sudo systemctl start wazuh-manager```
 
-## Step 3: 
+## Step 3: Checking all services
+- Once you've installed the wazuh server. Double check that all service are running with the following command.
+```sudo systemctl list-units | grep wazuh```
+- You should see the wazuh-dashboard, wazuh-indexer, and wazuh-manager services running. These are the 3 main services that need to be installed and running.
+![](https://i.imgur.com/qjNUbxK.png)
 
+## Step 4: Access Wazuh Dashboard
+Open a web browser and navigate to http://your-server-ip:443 to access the Wazuh dashboard. This will be where you will be able to view all the logs and security events.
 
-## Step 4: Install Wazuh API and Dashboard
-Run the following commands:
+# Client (Agent) Setup
+## Step 1: Prerequisites
+- sudo access
 
-```sudo apt-get install wazuh-api```
-```sudo apt-get install wazuh-dashboard```
-
-Step 5: Access Wazuh Dashboard
-Open a web browser and navigate to http://your-server-ip:5601 to access the Wazuh dashboard.
-
-Client (Agent) Setup
-Step 1: Prerequisites
-Make sure you have the following prerequisites installed on your client:
-
- Same Linux distribution as the server
- Internet connection
- sudo access
-Step 2: Download Wazuh Agent
-Download the Wazuh agent for your architecture from the official website: Wazuh Downloads
+## Step 2: Download Wazuh Agent
+- On your dashboard you will see this message:
+![](https://i.imgur.com/yY8dmvA.png)
+- You want to go ahead and click "Add Agent". This will direct you to another page where it will give you steps on adding the actual agent.
+- Here you want to select the OS.
+- For simplicity sake I'll be using a ubuntu OS to setup the agent on. You can use whichever OS you prefer, the process is more or less the same.
+- 
 
 Step 3: Install Wazuh Agent
 Install the Wazuh agent using the downloaded package. Replace [wazuh-agent-package.deb] with the actual package name.
