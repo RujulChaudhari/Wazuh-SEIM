@@ -13,10 +13,15 @@ Run the following commands to install the Wazuh Manager:
 - ```curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a```
 - ```sudo apt-get update```
 - ```sudo apt-get install wazuh-manager```
+- Once the installation of the server is finished. It will provide a link to the dashboard and login credentials:
+<br> This is the ipv4 of the wazuh server. You can find this by typing "ip a s" in the terminal. <br>
+ ![](https://i.imgur.com/E6zV1Zd.png)
+<br>Save these credentials somewhere secure, you will be using these to login to the dashboard. <br>
+ ![](https://i.imgur.com/QNBMCNT.png)
+- **NOTE:** If the service hasn't started automatically, go ahead and start it manually with the following command:
+<br>```sudo systemctl start wazuh-manager```
 
-## Step 3: Start Wazuh Manager
-Start the Wazuh Manager service:
-- ```sudo systemctl start wazuh-manager```
+## Step 3: 
 
 
 ## Step 4: Install Wazuh API and Dashboard
