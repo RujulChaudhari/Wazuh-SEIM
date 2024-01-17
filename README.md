@@ -1,6 +1,6 @@
 # This guide will walk you through the process of setting up Wazuh, a security information and event management (SIEM) tool, on a server and its corresponding agent on a client.
 
-## Server Setup
+# <ins> Server Setup
 ## Step 1: Prerequisites
 Make sure you have the following prerequisites for your server:
 
@@ -24,13 +24,13 @@ Run the following commands to install the Wazuh Manager:
 ## Step 3: Checking all services
 - Once you've installed the wazuh server. Double check that all service are running with the following command.
 ```sudo systemctl list-units | grep wazuh```
-- You should see the wazuh-dashboard, wazuh-indexer, and wazuh-manager services running. These are the 3 main services that need to be installed and running.
+- You should see the wazuh-dashboard, wazuh-indexer, and wazuh-manager services running. These are the 3 main services that need to be installed and running.<br>
 ![](https://i.imgur.com/qjNUbxK.png)
 
 ## Step 4: Access Wazuh Dashboard
 Open a web browser and navigate to http://your-server-ip:443 to access the Wazuh dashboard. This will be where you will be able to view all the logs and security events.
 
-# Client (Agent) Setup
+# <ins> Client (Agent) Setup
 ## Step 1: Prerequisites
 - sudo access
 
@@ -40,23 +40,14 @@ Open a web browser and navigate to http://your-server-ip:443 to access the Wazuh
 - You want to go ahead and click "Add Agent". This will direct you to another page where it will give you steps on adding the actual agent.
 - Here you want to select the OS.
 - For simplicity sake I'll be using a ubuntu OS to setup the agent on. You can use whichever OS you prefer, the process is more or less the same.
-- 
+- For the Server adress, you will be entering the ipv4 of the actual linux server.
+![](https://i.imgur.com/5gVqT3X.png)
+- At the bottom you will see a long command, this will be what you will run on you client machine in order to install the agent.
+![](https://i.imgur.com/Sl2v82G.png)
+- Once you've installed the agent on ur machine, go ahead and run the command under that in order to start the services.
+![](https://i.imgur.com/l9smhc7.png)
 
-Step 3: Install Wazuh Agent
-Install the Wazuh agent using the downloaded package. Replace [wazuh-agent-package.deb] with the actual package name.
-
-bash
-Copy code
-sudo dpkg -i [wazuh-agent-package.deb]
-Step 4: Configure Wazuh Agent
-Edit the Wazuh agent configuration file /var/ossec/etc/ossec.conf and configure the Wazuh manager IP address.
-
-bash
-Copy code
-sudo nano /var/ossec/etc/ossec.conf
-Step 5: Restart Wazuh Agent
-Restart the Wazuh agent for changes to take effect:
-
-bash
-Copy code
-sudo systemctl restart wazuh-agent
+## Step 3: Dashboard
+- Now if you go back to your wazuh dashboard, you will see our agent is showing up under the agent list.
+![](https://i.imgur.com/OvibfOv.png)
+- You have now successfully setup both the wazuh server and agent. As long as both are up and running you will be able to veiw all the logs and security events on the dashboard. Feel free to mess around in there. Enjoy! 
