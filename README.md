@@ -13,7 +13,7 @@ Run the following commands to install the Wazuh Manager:
 - ```curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a```
 - ```sudo apt-get update```
 - ```sudo apt-get install wazuh-manager```
-- Once the installation of the server is finished. It will provide a link to the dashboard and login credentials:
+- Once the server installation is completed. It will provide a link to the dashboard and login credentials:
 <br> This is the ipv4 of the wazuh server. You can find this by typing "ip a s" in the terminal. <br>
  ![](https://i.imgur.com/E6zV1Zd.png)
 <br>Save these credentials somewhere secure, you will be using these to login to the dashboard. <br>
@@ -40,11 +40,11 @@ Open a web browser and navigate to http://your-server-ip:443 to access the Wazuh
 - You want to go ahead and click "Add Agent". This will direct you to another page where it will give you steps on adding the actual agent.
 - Here you want to select the OS.
 - For simplicity sake I'll be using a ubuntu OS to setup the agent on. You can use whichever OS you prefer, the process is more or less the same.
-- For the Server adress, you will be entering the ipv4 of the actual linux server.
+- For the Server address, you will be entering the ipv4 of the actual linux server.
 ![](https://i.imgur.com/5gVqT3X.png)
-- At the bottom you will see a long command, this will be what you will run on you client machine in order to install the agent.
+- At the bottom you will see a long command, this is what you will run on your client machine in order to install the agent.
 ![](https://i.imgur.com/Sl2v82G.png)
-- Once you've installed the agent on ur machine, go ahead and run the command under that in order to start the services.
+- Once you've installed the agent on your machine, go ahead and run the command below in order to start the services.
 ![](https://i.imgur.com/l9smhc7.png)
 
 ## Step 3: Dashboard
